@@ -1065,6 +1065,190 @@
       .featured-project .metrics { gap: 20px; }
       footer .container { flex-direction: column; }
     }
+
+    /* FINAL MOBILE COMPATIBILITY PATCH */
+    @media (max-width: 768px) {
+      body {
+        overflow-x: hidden;
+      }
+
+      .container {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      nav {
+        position: relative;
+      }
+
+      nav .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+      }
+
+      .nav-links {
+        width: 100%;
+        gap: 18px;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 6px;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+
+      .hero {
+        padding: 56px 0 56px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .availability {
+        max-width: 100%;
+        flex-wrap: wrap;
+        line-height: 1.45;
+        font-size: 0.74rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(3rem, 16vw, 4.2rem);
+        line-height: 0.95;
+      }
+
+      .hero .role,
+      .hero .lead {
+        max-width: 100%;
+      }
+
+      .hero-visual {
+        justify-self: stretch;
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .visual-frame {
+        aspect-ratio: 16 / 11;
+      }
+
+      .quick-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        word-break: break-word;
+      }
+
+      .quick-links .divider,
+      .contact-meta .divider {
+        display: none;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .stat .number {
+        font-size: 2.45rem;
+      }
+
+      section {
+        padding: 64px 0;
+      }
+
+      .section-header {
+        margin-bottom: 36px;
+      }
+
+      .about-grid,
+      .projects-grid,
+      .skills-grid,
+      .cert-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .featured-project,
+      .project,
+      .skills-group,
+      .cert-card,
+      .focus-card {
+        padding: 22px;
+      }
+
+      .featured-project .metrics {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .visual-body.dashboard {
+        grid-template-columns: 1fr;
+      }
+
+      .dash-bar {
+        flex-wrap: wrap;
+      }
+
+      .contact-meta {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      footer .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      footer .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .container {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+      }
+
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .contact-cta {
+        flex-direction: column;
+      }
+
+      .featured-project,
+      .project,
+      .skills-group,
+      .cert-card,
+      .focus-card {
+        padding: 18px;
+      }
+
+      .visual-tag {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1085,7 +1269,7 @@
     <div class="container">
       <div class="hero-grid">
         <div>
-          <div class="availability">Open to work · Vancouver, BC · Hybrid · Remote · Open to relocate</div>
+          <div class="availability">Open to work · Vancouver, BC · Hybrid · Remote</div>
           <h1>
             Reza<br/>
             <span class="accent">Mansouri</span>
@@ -1603,7 +1787,7 @@
         <div class="section-label">Contact</div>
         <h2>Let's <span class="italic">work together</span></h2>
         <p>
-          Currently open to <strong>Enterprise Architect</strong>, <strong>Network Engineering</strong>, <strong>Infrastructure</strong>, and <strong>Automation</strong> roles. Vancouver, BC preferred — on-site, hybrid, or remote. <strong>Open to relocate within Canada</strong> for the right opportunity. If you're hiring, or want to chat about enterprise IT, healthcare IT, or modern endpoint management, I'd love to hear from you.
+          Currently open to <strong>Enterprise Architect</strong>, <strong>Network Engineering</strong>, <strong>Infrastructure</strong>, and <strong>Automation</strong> roles. Vancouver, BC preferred — on-site, hybrid, or remote. If you're hiring, or want to chat about enterprise IT, healthcare IT, or modern endpoint management, I'd love to hear from you.
         </p>
         <div class="contact-cta">
           <a href="mailto:r.mansouri7@gmail.com" class="btn btn-primary">
@@ -1620,8 +1804,6 @@
           <span>📍 Vancouver, BC</span>
           <span class="divider">/</span>
           <span>Pacific Time (PT)</span>
-          <span class="divider">/</span>
-          <span>Open to relocate within Canada</span>
         </div>
       </div>
     </div>
