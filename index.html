@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reza Mansouri | Network Engineer & IT Infrastructure | Vancouver BC</title>
-<meta name="description" content="Reza Mansouri — Enterprise IT Infrastructure & Network Engineer in Vancouver, BC. 15+ years in Cisco, PowerShell, Jamf Pro, VMware, Sophos & Fortinet. Open to work.">
+<title>Reza Mansouri | IT Leader, Infrastructure &amp; Automation | Vancouver</title>
+<meta name="description" content="Reza Mansouri — IT Leader in Vancouver specializing in infrastructure, automation, endpoint management, networking, security, and multi-site healthcare operations.">
 <meta name="author" content="Reza Mansouri">
 <meta name="robots" content="index, follow">
 <meta name="geo.region" content="CA-BC">
 <meta name="geo.placename" content="Vancouver, British Columbia, Canada">
 <link rel="canonical" href="https://rezamansouri.net/">
-<meta property="og:title" content="Reza Mansouri | Network Engineer & IT Infrastructure | Vancouver BC">
-<meta property="og:description" content="Enterprise IT Infrastructure & Network Engineer in Vancouver BC. 15+ years experience. Open to work.">
+<meta property="og:title" content="Reza Mansouri | IT Leader, Infrastructure & Automation">
+<meta property="og:description" content="IT leadership, infrastructure automation, endpoint management, networking, and security for complex multi-site environments.">
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://rezamansouri.net/">
 <meta property="og:locale" content="en_CA">
@@ -50,13 +50,13 @@ a{color:inherit}
   background:radial-gradient(ellipse at 50% 30%,transparent 40%,rgba(7,10,22,.85) 100%)}
 
 /* ---------- shell ---------- */
-.shell{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:0 24px}
+.shell{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:0 28px}
 
 /* ---------- nav ---------- */
 nav{position:fixed;top:0;left:0;right:0;z-index:50;
   backdrop-filter:blur(14px);background:rgba(7,10,22,.55);
   border-bottom:1px solid var(--line)}
-.nav-inner{max-width:1100px;margin:0 auto;padding:14px 24px;
+.nav-inner{max-width:1180px;margin:0 auto;padding:14px 28px;
   display:flex;align-items:center;justify-content:space-between;gap:16px}
 .logo{font-family:'Unbounded',sans-serif;font-weight:800;font-size:.95rem;letter-spacing:.04em;text-decoration:none}
 .logo span{color:var(--cyan)}
@@ -67,25 +67,27 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;
 .hops .h{color:var(--cyan)}
 .hops .ms{color:var(--ink-dim);opacity:.6}
 @media(max-width:840px){.hops .ms{display:none}}
-@media(max-width:640px){.hops{display:none}}
 .ttl{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--ink-dim)}
 .ttl b{color:var(--amber);font-weight:600}
 
 /* ---------- hero ---------- */
-header{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:90px}
+header{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:130px 0 72px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(320px,.75fr);
+  gap:64px;align-items:center}
+.hero-copy{min-width:0}
 .session{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;
   font-family:'JetBrains Mono',monospace;font-size:.74rem;color:var(--green);
   border:1px solid rgba(61,255,168,.3);background:rgba(61,255,168,.06);
-  padding:7px 14px;border-radius:999px;margin-bottom:28px}
+  padding:7px 14px;border-radius:999px;margin-bottom:24px}
 .session i{width:8px;height:8px;border-radius:50%;background:var(--green);
   box-shadow:0 0 12px var(--green);animation:pulse 1.6s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
 h1{font-family:'Unbounded',sans-serif;font-weight:800;
-  font-size:clamp(2.6rem,8vw,5.6rem);line-height:1.02;letter-spacing:-.01em}
-h1 .ghost{color:transparent;-webkit-text-stroke:1.5px rgba(0,229,255,.55)}
-.sub{max-width:620px;margin-top:26px;font-size:1.12rem;color:var(--ink-dim)}
+  font-size:clamp(2.7rem,6.4vw,5.2rem);line-height:1.02;letter-spacing:-.02em}
+h1 .ghost{display:block;color:transparent;-webkit-text-stroke:1.5px rgba(0,229,255,.68)}
+.sub{max-width:690px;margin-top:24px;font-size:1.1rem;color:var(--ink-dim)}
 .sub b{color:var(--ink);font-weight:500}
-.cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:38px}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
 .btn{font-family:'JetBrains Mono',monospace;font-size:.85rem;text-decoration:none;
   padding:14px 26px;border-radius:10px;transition:.22s;display:inline-flex;align-items:center;gap:9px}
 .btn-cyan{background:var(--cyan);color:#03101a;font-weight:600;
@@ -93,13 +95,27 @@ h1 .ghost{color:transparent;-webkit-text-stroke:1.5px rgba(0,229,255,.55)}
 .btn-cyan:hover{transform:translateY(-2px);box-shadow:0 0 44px rgba(0,229,255,.55)}
 .btn-ghost{border:1px solid var(--line);color:var(--ink-dim)}
 .btn-ghost:hover{color:var(--ink);border-color:rgba(0,229,255,.4)}
-.hero-meta{margin-top:46px;font-family:'JetBrains Mono',monospace;font-size:.76rem;
+.hero-meta{margin-top:34px;font-family:'JetBrains Mono',monospace;font-size:.76rem;
   color:var(--ink-dim);display:flex;flex-wrap:wrap;gap:8px 22px}
 .hero-meta a{color:var(--cyan);text-decoration:none}
 .hero-meta a:hover{text-decoration:underline}
+.hero-panel{border:1px solid rgba(0,229,255,.22);border-radius:22px;
+  padding:28px;background:linear-gradient(160deg,rgba(16,22,50,.88),rgba(7,10,22,.76));
+  box-shadow:0 28px 80px rgba(0,0,0,.42);backdrop-filter:blur(12px)}
+.panel-kicker{font-family:'JetBrains Mono',monospace;font-size:.69rem;color:var(--amber);
+  text-transform:uppercase;letter-spacing:.14em;margin-bottom:10px}
+.hero-panel h2{font-family:'Unbounded',sans-serif;font-size:1.35rem;line-height:1.25;margin:0 0 22px}
+.impact-list{display:grid;gap:0;border-top:1px solid var(--line)}
+.impact{display:flex;justify-content:space-between;gap:18px;padding:15px 0;
+  border-bottom:1px solid var(--line);align-items:baseline}
+.impact b{font-family:'Unbounded',sans-serif;font-size:1.08rem;color:var(--cyan)}
+.impact span{font-size:.78rem;color:var(--ink-dim);text-align:right}
+.panel-link{display:inline-flex;margin-top:22px;color:var(--green);font-family:'JetBrains Mono',monospace;
+  font-size:.78rem;text-decoration:none}
+.panel-link:hover{text-decoration:underline}
 
 /* ---------- counters strip ---------- */
-.counters{margin:30px 0 0;border:1px solid var(--line);border-radius:var(--radius);
+.counters{margin:48px 0 0;border:1px solid var(--line);border-radius:var(--radius);
   background:linear-gradient(180deg,rgba(16,22,50,.7),rgba(12,17,36,.7));
   backdrop-filter:blur(8px);
   display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden}
@@ -112,7 +128,7 @@ h1 .ghost{color:transparent;-webkit-text-stroke:1.5px rgba(0,229,255,.55)}
   .counter:nth-child(3){border-left:none}}
 
 /* ---------- sections ---------- */
-section{padding:110px 0 30px}
+section{padding:100px 0 24px;scroll-margin-top:78px}
 .hopline{display:flex;align-items:center;gap:14px;
   font-family:'JetBrains Mono',monospace;font-size:.74rem;color:var(--ink-dim);margin-bottom:18px}
 .hopline .n{color:var(--amber)}
@@ -152,20 +168,26 @@ h2 em{font-style:normal;color:var(--cyan)}
 .tr-item p b{color:var(--ink);font-weight:500}
 
 /* ---------- projects ---------- */
-.proj{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
-  background:rgba(16,22,50,.5);margin-bottom:30px;transition:.25s;position:relative}
+.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.proj{border:1px solid var(--line);border-radius:18px;overflow:hidden;
+  background:rgba(16,22,50,.56);margin:0;transition:.25s;position:relative;
+  display:flex;flex-direction:column;min-height:100%}
+.proj.featured{grid-column:1/-1}
+.proj.case-study{border-color:rgba(61,255,168,.28);
+  background:linear-gradient(145deg,rgba(61,255,168,.07),rgba(16,22,50,.72))}
 .proj:hover{border-color:rgba(0,229,255,.35);transform:translateY(-3px);
   box-shadow:0 18px 50px rgba(0,0,0,.45)}
 .proj-head{display:flex;align-items:baseline;gap:14px;padding:24px 28px 0}
 .proj-head .idx{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--amber)}
 .proj-head h3{font-size:1.2rem;font-weight:700}
-.proj-body{padding:14px 28px 24px;color:var(--ink-dim)}
+.proj-body{padding:14px 28px 24px;color:var(--ink-dim);flex:1}
 .proj-body p b{color:var(--ink);font-weight:500}
 .term{margin:18px 0;background:#060912;border:1px solid var(--line);border-radius:10px;
   font-family:'JetBrains Mono',monospace;font-size:.78rem;overflow:hidden}
 .term-bar{display:flex;gap:6px;align-items:center;padding:9px 14px;border-bottom:1px solid var(--line);
   color:var(--ink-dim);font-size:.68rem}
 .term-bar i{width:9px;height:9px;border-radius:50%;display:inline-block}
+.dot-magenta{background:var(--magenta)}.dot-amber{background:var(--amber)}.dot-green{background:var(--green)}
 .term pre{padding:16px 18px;white-space:pre-wrap;line-height:1.8;color:#9FB3E8}
 .term .c{color:var(--cyan)}.term .g{color:var(--green)}.term .a{color:var(--amber)}
 .proj-stats{display:flex;flex-wrap:wrap;gap:26px;padding:0 28px 22px;
@@ -174,7 +196,9 @@ h2 em{font-style:normal;color:var(--cyan)}
 .proj-stats div span{font-size:.66rem;color:var(--ink-dim);text-transform:uppercase;letter-spacing:.1em}
 .tags{display:flex;flex-wrap:wrap;gap:8px;padding:0 28px 26px}
 .tags .chip{font-size:.68rem}
-.proj a.live{color:var(--cyan)}
+.proj a.live{color:var(--cyan);text-decoration:none}
+.proj a.live:hover{text-decoration:underline}
+.skills-title{margin-top:80px}
 
 /* ---------- skills ---------- */
 .skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
@@ -201,11 +225,36 @@ h2 em{font-style:normal;color:var(--cyan)}
 .peer p{color:var(--ink-dim)}
 .peer p b{color:var(--ink);font-weight:500}
 .peer .term{margin:0}
+.contact-lead{margin-bottom:16px}.contact-actions{margin-top:26px}
 footer{position:relative;z-index:2;border-top:1px solid var(--line);margin-top:110px;
   padding:34px 24px;text-align:center;font-family:'JetBrains Mono',monospace;
   font-size:.74rem;color:var(--ink-dim)}
 footer a{color:var(--cyan);text-decoration:none;margin:0 10px}
 footer a:hover{text-decoration:underline}
+.footer-links{margin-top:10px}
+
+@media(max-width:940px){
+  .hero-grid{grid-template-columns:1fr;gap:36px}
+  .hero-panel{max-width:720px}
+}
+@media(max-width:720px){
+  .shell{padding:0 18px}
+  .nav-inner{padding:10px 18px;flex-wrap:wrap}
+  .logo{font-size:.82rem}.ttl{font-size:.66rem}
+  .hops{order:3;width:100%;display:flex;overflow-x:auto;gap:2px;padding-top:4px;
+    scrollbar-width:none}.hops::-webkit-scrollbar{display:none}
+  .hops .h,.hops .ms{display:none}
+  .hops a{white-space:nowrap;padding:6px 9px;font-size:.69rem}
+  header{padding:142px 0 56px;min-height:auto}
+  .session{font-size:.64rem;margin-bottom:20px}
+  h1{font-size:clamp(2.35rem,13vw,4rem)}
+  .sub{font-size:1rem}.hero-panel{padding:22px}
+  .counters{grid-template-columns:repeat(2,1fr)}
+  .counter{padding:18px 16px}.counter:nth-child(3){border-left:none}
+  .project-grid{grid-template-columns:1fr}.proj.featured{grid-column:auto}
+  section{padding:78px 0 18px}
+  .proj-head,.proj-body,.proj-stats,.tags{padding-left:22px;padding-right:22px}
+}
 
 @media (prefers-reduced-motion: reduce){
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
@@ -219,15 +268,15 @@ footer a:hover{text-decoration:underline}
 <canvas id="net" aria-hidden="true"></canvas>
 <div class="vignette" aria-hidden="true"></div>
 
-<nav>
+<nav aria-label="Primary">
   <div class="nav-inner">
     <a class="logo" href="#top">REZA<span>.</span>MANSOURI</a>
     <ul class="hops">
-      <li><a href="#about"><span class="h">hop&nbsp;1</span> about <span class="ms">2ms</span></a></li>
-      <li><a href="#experience"><span class="h">hop&nbsp;2</span> experience <span class="ms">5ms</span></a></li>
-      <li><a href="#projects"><span class="h">hop&nbsp;3</span> work <span class="ms">7ms</span></a></li>
-      <li><a href="#certs"><span class="h">hop&nbsp;4</span> credentials <span class="ms">9ms</span></a></li>
-      <li><a href="#contact"><span class="h">hop&nbsp;5</span> peer <span class="ms">11ms</span></a></li>
+      <li><a href="#about"><span class="h">01</span> About</a></li>
+      <li><a href="#experience"><span class="h">02</span> Experience</a></li>
+      <li><a href="#projects"><span class="h">03</span> Case studies</a></li>
+      <li><a href="#certs"><span class="h">04</span> Credentials</a></li>
+      <li><a href="#contact"><span class="h">05</span> Contact</a></li>
     </ul>
     <div class="ttl">TTL <b id="ttlVal">64</b></div>
   </div>
@@ -237,25 +286,40 @@ footer a:hover{text-decoration:underline}
 
   <!-- HERO -->
   <header>
-    <div class="session"><i></i> BGP SESSION: OPEN TO WORK — STATE: ESTABLISHED · VANCOUVER, BC</div>
-    <h1>I ROUTE<br><span class="ghost">COMPLEXITY</span><br>INTO ORDER.</h1>
-    <p class="sub">Enterprise Infrastructure &amp; Network Architect — <b>15+ years</b> designing, automating, and securing IT environments across Windows, macOS, and Linux. Most recently running infrastructure for a <b>multi-clinic healthcare network</b> in Vancouver.</p>
-    <div class="cta-row">
-      <a class="btn btn-cyan" href="#contact">$ peer with me →</a>
-      <a class="btn btn-ghost" href="#projects">traceroute my work</a>
-    </div>
-    <div class="hero-meta">
-      <span>📍 Vancouver, BC · PT</span>
-      <a href="mailto:r.mansouri7@gmail.com">r.mansouri7@gmail.com</a>
-      <a href="https://www.linkedin.com/in/reza-mansouri-67297455/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/rezamans" target="_blank" rel="noopener">GitHub</a>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="session"><i></i> AVAILABLE FOR THE RIGHT OPPORTUNITY · VANCOUVER, BC</div>
+        <h1>IT OPERATIONS<br>BUILT TO <span class="ghost">SCALE.</span></h1>
+        <p class="sub"><b>IT Leader with 15+ years of experience</b> turning fragmented infrastructure into secure, automated, and documented operations across Windows, macOS, cloud, networking, and multi-site healthcare environments.</p>
+        <div class="cta-row">
+          <a class="btn btn-cyan" href="#projects">View case studies →</a>
+          <a class="btn btn-ghost" href="#contact">Start a conversation</a>
+        </div>
+        <div class="hero-meta">
+          <span>📍 Vancouver, BC · PT</span>
+          <a href="mailto:r.mansouri7@gmail.com">r.mansouri7@gmail.com</a>
+          <a href="https://www.linkedin.com/in/reza-mansouri-67297455/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/rezamans" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <aside class="hero-panel reveal" aria-label="Selected operational impact">
+        <div class="panel-kicker">// selected operational impact</div>
+        <h2>From reactive support to repeatable systems.</h2>
+        <div class="impact-list">
+          <div class="impact"><b>20+</b><span>healthcare locations standardized</span></div>
+          <div class="impact"><b>100+</b><span>endpoints under central management</span></div>
+          <div class="impact"><b>≈40%</b><span>cloud licensing cost reduction</span></div>
+          <div class="impact"><b>60%+</b><span>less avoidable field-support travel</span></div>
+        </div>
+        <a class="panel-link" href="https://github.com/rezamans/multi-site-healthcare-it-transformation" target="_blank" rel="noopener">Open the transformation case study ↗</a>
+      </aside>
     </div>
 
     <div class="counters reveal">
-      <div class="counter"><div class="v" data-count="15">0</div><div class="l">Years uptime</div></div>
-      <div class="counter"><div class="v" data-count="25">0</div><div class="l">Engineers trained</div></div>
-      <div class="counter"><div class="v">45→1</div><div class="l">Min provisioning</div></div>
-      <div class="counter"><div class="v" data-count="3">0</div><div class="l">OS platforms</div></div>
+      <div class="counter"><div class="v" data-count="15">15+</div><div class="l">Years in enterprise IT</div></div>
+      <div class="counter"><div class="v" data-count="25">25+</div><div class="l">Engineers trained</div></div>
+      <div class="counter"><div class="v">45→1</div><div class="l">Provisioning workflow</div></div>
+      <div class="counter"><div class="v" data-count="3">3+</div><div class="l">Operating platforms</div></div>
     </div>
   </header>
 
@@ -270,7 +334,7 @@ footer a:hover{text-decoration:underline}
         <p>At Terra Nova Medical Clinics I turned 45-minute manual workstation setups into <b>single-command workflows</b> with PowerShell, Jamf Pro, and modern deployment frameworks — and I'm driving a standardization program that turns ad-hoc operations into documented, repeatable processes.</p>
         <p>Beyond the tech, I've personally <b>trained 25+ engineers</b>. The strongest IT leaders multiply themselves through documentation, knowledge transfer, and consistent standards.</p>
       </div>
-      <aside class="focus">
+      <aside class="focus" aria-label="Core technical focus">
         <h3>// core focus</h3>
         <div class="chips">
           <span class="chip">IT Infrastructure</span><span class="chip">Endpoint Management</span>
@@ -290,7 +354,7 @@ footer a:hover{text-decoration:underline}
     <div class="trace">
       <div class="tr-item reveal">
         <span class="tag">● current</span>
-        <h3>IT Infrastructure &amp; Automation Engineer</h3>
+        <h3>IT Leader — Infrastructure &amp; Automation</h3>
         <div class="org">Terra Nova Medical Clinics — Vancouver, BC</div>
         <p>Lead IT operations across a multi-clinic healthcare environment. Built a PowerShell automation toolkit that provisions workstations with one command, designed zero-touch macOS deployments via Jamf Pro + ABM, and architected a serverless IT inventory portal. Currently driving an org-wide <b>standardization program</b>.</p>
       </div>
@@ -318,14 +382,28 @@ footer a:hover{text-decoration:underline}
   <!-- PROJECTS -->
   <section id="projects">
     <div class="hopline"><span class="n">hop 3</span><span>selected work · 10.0.0.3 · 7ms</span><span class="rule"></span></div>
-    <h2 class="reveal">Production systems,<br><em>running today</em>.</h2>
+    <h2 class="reveal">Systems, standards, and<br><em>measurable outcomes</em>.</h2>
 
-    <article class="proj reveal">
-      <div class="proj-head"><span class="idx">★ featured</span><h3>Terra Nova IT Toolkit — PowerShell Deployment Framework</h3></div>
+    <div class="project-grid">
+    <article class="proj featured case-study reveal">
+      <div class="proj-head"><span class="idx">★ LEADERSHIP CASE STUDY</span><h3><a class="live" href="https://github.com/rezamans/multi-site-healthcare-it-transformation" target="_blank" rel="noopener">Multi-Site Healthcare IT Transformation ↗</a></h3></div>
+      <div class="proj-body">
+        <p>A public, privacy-safe case study showing how I moved a fragmented clinic-by-clinic environment toward <b>centralized management, endpoint security, automation, asset governance, documented operations, and measurable cost control</b>. It includes the transformation roadmap, decision model, operating principles, and reusable process templates.</p>
+      </div>
+      <div class="proj-stats">
+        <div><b>20+</b><span>locations in scope</span></div>
+        <div><b>200+</b><span>assets organized</span></div>
+        <div><b>≈40%</b><span>license cost reduction</span></div>
+      </div>
+      <div class="tags"><span class="chip">IT Leadership</span><span class="chip">Healthcare IT</span><span class="chip">Security</span><span class="chip">Governance</span><span class="chip">Automation</span><span class="chip">SOPs</span></div>
+    </article>
+
+    <article class="proj featured reveal">
+      <div class="proj-head"><span class="idx">02 · AUTOMATION</span><h3><a class="live" href="https://github.com/rezamans/terra-nova-it-toolkit" target="_blank" rel="noopener">Terra Nova IT Toolkit — PowerShell Deployment Framework ↗</a></h3></div>
       <div class="proj-body">
         <p>A modular automation framework that provisions a complete Windows workstation with <b>one command</b> — app deployment via Chocolatey, RustDesk remote support, printer driver automation, local admin validation, and centralized CSV asset tracking. Modules load dynamically from a central repo, so updates ship without redeploying.</p>
         <div class="term">
-          <div class="term-bar"><i style="background:var(--magenta)"></i><i style="background:var(--amber)"></i><i style="background:var(--green)"></i>&nbsp; PowerShell — Terra Nova IT Toolkit</div>
+          <div class="term-bar"><i class="dot-magenta"></i><i class="dot-amber"></i><i class="dot-green"></i>&nbsp; PowerShell — Terra Nova IT Toolkit</div>
           <pre id="typer"><span class="c">PS C:\&gt;</span> irm https://lnkd.in/gmBBujcu | iex</pre>
         </div>
       </div>
@@ -338,7 +416,7 @@ footer a:hover{text-decoration:underline}
     </article>
 
     <article class="proj reveal">
-      <div class="proj-head"><span class="idx">02</span><h3>Zero-Touch macOS Deployment</h3></div>
+      <div class="proj-head"><span class="idx">03</span><h3>Zero-Touch macOS Deployment</h3></div>
       <div class="proj-body">
         <p>Zero-touch macOS provisioning with Jamf Pro, Apple Business Manager, and Google Workspace — silent local admin deployment, privacy-aware remote support via Jamf Remote Assist, and PPPC profiles standardized across all clinic locations. <b>No user input required.</b></p>
       </div>
@@ -346,7 +424,7 @@ footer a:hover{text-decoration:underline}
     </article>
 
     <article class="proj reveal">
-      <div class="proj-head"><span class="idx">03</span><h3><a class="live" href="https://techstaff.win" target="_blank" rel="noopener">Smart IT Asset Portal — techstaff.win ↗</a></h3></div>
+      <div class="proj-head"><span class="idx">04</span><h3><a class="live" href="https://techstaff.win" target="_blank" rel="noopener">Smart IT Asset Portal — techstaff.win ↗</a></h3></div>
       <div class="proj-body">
         <p>A lean asset management platform built <b>without enterprise licensing costs</b> — Google Sheets as the data layer, Looker Studio for live dashboards, custom portal for decision-ready intelligence. 247 devices, 12 locations, 98% coverage. Now extending with Docker, n8n, and AI-driven IT agents.</p>
       </div>
@@ -359,22 +437,23 @@ footer a:hover{text-decoration:underline}
     </article>
 
     <article class="proj reveal">
-      <div class="proj-head"><span class="idx">04</span><h3>Serverless IT Inventory Portal</h3></div>
+      <div class="proj-head"><span class="idx">05</span><h3>Endpoint Security &amp; Remote Management Rollout</h3></div>
       <div class="proj-body">
-        <p>Transformed spreadsheet-based asset tracking into a serverless portal — Sheets as data layer, Apps Script for routing &amp; auth, Looker Studio dashboards, custom dynamic UX. <b>$0 infrastructure · 99.9% uptime · multi-site.</b></p>
+        <p>Introduced centralized monitoring, remote support, patch visibility, and endpoint detection and response across a distributed clinic environment. The rollout replaced avoidable on-site work with <b>measurable coverage, controlled exceptions, and faster technical response</b>.</p>
       </div>
-      <div class="tags"><span class="chip">Serverless</span><span class="chip">Cloud</span><span class="chip">DevOps</span></div>
+      <div class="tags"><span class="chip">RMM</span><span class="chip">EDR</span><span class="chip">SentinelOne</span><span class="chip">NinjaOne</span><span class="chip">Remote Operations</span></div>
     </article>
 
     <article class="proj reveal">
-      <div class="proj-head"><span class="idx">05</span><h3>Browser-Layer Performance Audit — Juno EMR</h3></div>
+      <div class="proj-head"><span class="idx">06</span><h3>Browser-Layer Performance Audit — Juno EMR</h3></div>
       <div class="proj-body">
         <p>A clinical environment had severe lag and GPU spikes despite modern hardware. Instead of replacing infrastructure, I audited the browser layer and stabilized performance through Chrome Enterprise governance: GPU <b>87% → 14%</b>, lag <b>4.2s → 0.3s</b>, crashes <b>12/day → 0</b>. Zero hardware replaced.</p>
       </div>
       <div class="tags"><span class="chip">Chrome Enterprise</span><span class="chip">Healthcare IT</span><span class="chip">Performance</span></div>
     </article>
+    </div>
 
-    <h2 class="reveal" style="margin-top:80px">Routing table: <em>toolkit</em></h2>
+    <h2 class="reveal skills-title">Routing table: <em>toolkit</em></h2>
     <div class="skill-grid">
       <div class="skill reveal"><h3>// operating systems</h3><div class="chips"><span class="chip">Windows Server &amp; Desktop</span><span class="chip">macOS Administration</span><span class="chip">Linux</span><span class="chip">Fedora</span><span class="chip">CentOS</span><span class="chip">Ubuntu</span></div></div>
       <div class="skill reveal"><h3>// endpoint &amp; mdm</h3><div class="chips"><span class="chip">Jamf Pro</span><span class="chip">Apple Business Manager</span><span class="chip">Microsoft Intune</span><span class="chip">Zero-Touch Deployment</span><span class="chip">PPPC Profiles</span></div></div>
@@ -421,19 +500,19 @@ footer a:hover{text-decoration:underline}
   <!-- CONTACT -->
   <section id="contact">
     <div class="hopline"><span class="n">hop 5</span><span>destination reached · 10.0.0.5 · 11ms</span><span class="rule"></span></div>
-    <h2 class="reveal">Establish a <em>peering session</em></h2>
+    <h2 class="reveal">Let's build something<br><em>reliable at scale</em>.</h2>
     <div class="peer reveal">
       <div>
-        <p style="margin-bottom:16px">Currently open to <b>Enterprise Architect</b>, <b>Network Engineering</b>, <b>Infrastructure</b>, and <b>Automation</b> roles — Vancouver, BC preferred; on-site, hybrid, or remote.</p>
+        <p class="contact-lead">Currently open to the right <b>IT Leadership</b>, <b>Infrastructure</b>, <b>Network Engineering</b>, and <b>Automation</b> opportunity — Vancouver, BC preferred; on-site, hybrid, or remote.</p>
         <p>If you're hiring, or want to talk enterprise IT, healthcare IT, or modern endpoint management — let's set up a session.</p>
-        <div class="cta-row" style="margin-top:26px">
+        <div class="cta-row contact-actions">
           <a class="btn btn-cyan" href="mailto:r.mansouri7@gmail.com">$ send email →</a>
           <a class="btn btn-ghost" href="https://www.linkedin.com/in/reza-mansouri-67297455/" target="_blank" rel="noopener">LinkedIn</a>
           <a class="btn btn-ghost" href="https://github.com/rezamans" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
       <div class="term">
-        <div class="term-bar"><i style="background:var(--magenta)"></i><i style="background:var(--amber)"></i><i style="background:var(--green)"></i>&nbsp; router&gt; show bgp neighbor</div>
+        <div class="term-bar"><i class="dot-magenta"></i><i class="dot-amber"></i><i class="dot-green"></i>&nbsp; router&gt; show bgp neighbor</div>
         <pre><span class="c">router(config)#</span> router bgp 64512
 <span class="c">router(config-router)#</span> neighbor <span class="a">r.mansouri7@gmail.com</span>
   remote-as <span class="a">YOUR-COMPANY</span>
@@ -449,7 +528,7 @@ footer a:hover{text-decoration:underline}
 
 <footer>
   © 2026 Reza Mansouri · Vancouver, BC · AS64512
-  <div style="margin-top:10px">
+  <div class="footer-links">
     <a href="mailto:r.mansouri7@gmail.com">Email</a>
     <a href="https://www.linkedin.com/in/reza-mansouri-67297455/" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://github.com/rezamans" target="_blank" rel="noopener">GitHub</a>
@@ -624,7 +703,7 @@ addEventListener('scroll',()=>{
   "@context":"https://schema.org",
   "@type":"Person",
   "name":"Reza Mansouri",
-  "jobTitle":"IT Infrastructure & Network Engineer",
+  "jobTitle":"IT Leader — Infrastructure & Automation",
   "url":"https://rezamansouri.net",
   "email":"mailto:r.mansouri7@gmail.com",
   "address":{"@type":"PostalAddress","addressLocality":"Vancouver","addressRegion":"BC","addressCountry":"CA"},
