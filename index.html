@@ -366,6 +366,9 @@
     .contact-grid { display: grid; grid-template-columns: 1fr auto; gap: 52px; align-items: end; }
     .contact p { max-width: 670px; margin: 22px 0 0; color: #bdccd3; font-size: 1.05rem; }
     .contact .button-primary { color: var(--navy); background: #8ce5df; border-color: #8ce5df; white-space: nowrap; }
+    .contact-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 11px; }
+    .contact .button-secondary { color: var(--white); border-color: rgba(255,255,255,.5); white-space: nowrap; }
+    .contact .button-secondary:hover { color: var(--navy); background: var(--white); }
 
     footer { padding: 39px 0 46px; color: var(--ink-soft); font-size: .78rem; }
     .footer-row { display: flex; justify-content: space-between; gap: 24px; border-top: 1px solid var(--line-strong); padding-top: 28px; }
@@ -428,6 +431,8 @@
       .about-grid { gap: 48px; }
       .focus-row { grid-template-columns: 1fr; gap: 7px; }
       .contact { padding: 36px 25px; border-radius: 22px; }
+      .contact-actions { justify-content: stretch; }
+      .contact-actions .button { width: 100%; }
       .footer-row { flex-direction: column; }
     }
 
@@ -582,7 +587,10 @@
               <h2>Building something<br>that needs to scale?</h2>
               <p>Open to the right IT leadership, Network Administrator, Network Engineer, infrastructure, automation, or healthcare technology opportunity in Vancouver, hybrid, or remote.</p>
             </div>
-            <a class="button button-primary" href="mailto:r.mansouri7@gmail.com">Email Reza →</a>
+            <div class="contact-actions">
+              <a class="button button-primary" href="mailto:r.mansouri7@gmail.com">Email Reza →</a>
+              <a class="button button-secondary" href="/card/">Digital Card</a>
+            </div>
           </div>
         </div>
       </div>
@@ -593,6 +601,7 @@
     <div class="wrap footer-row">
       <span>© 2026 Reza Mansouri · Vancouver, BC</span>
       <div class="footer-links">
+        <a href="/card/">Digital Card</a>
         <a href="https://github.com/rezamans" target="_blank" rel="noopener">GitHub</a>
         <a href="https://www.linkedin.com/in/reza-mansouri-67297455/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="mailto:r.mansouri7@gmail.com">Email</a>
