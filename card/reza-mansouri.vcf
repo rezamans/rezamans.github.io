@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Mansouri;Reza;;;
+FN:Reza Mansouri
+TITLE:IT Leader | Network Administrator
+EMAIL;TYPE=INTERNET,WORK:r.mansouri7@gmail.com
+URL;TYPE=WORK:https://rezamansouri.net/
+URL;TYPE=LinkedIn:https://www.linkedin.com/in/reza-mansouri-67297455/
+URL;TYPE=GitHub:https://github.com/rezamans
+ADR;TYPE=WORK:;;;Vancouver;BC;;Canada
+NOTE:IT leadership, network administration, infrastructure, automation, and multi-site IT operations.
+REV:20260802T000000Z
+END:VCARD
