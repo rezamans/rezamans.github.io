@@ -1,715 +1,642 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reza Mansouri | IT Leader, Infrastructure &amp; Automation | Vancouver</title>
-<meta name="description" content="Reza Mansouri — IT Leader in Vancouver specializing in infrastructure, automation, endpoint management, networking, security, and multi-site healthcare operations.">
-<meta name="author" content="Reza Mansouri">
-<meta name="robots" content="index, follow">
-<meta name="geo.region" content="CA-BC">
-<meta name="geo.placename" content="Vancouver, British Columbia, Canada">
-<link rel="canonical" href="https://rezamansouri.net/">
-<meta property="og:title" content="Reza Mansouri | IT Leader, Infrastructure & Automation">
-<meta property="og:description" content="IT leadership, infrastructure automation, endpoint management, networking, and security for complex multi-site environments.">
-<meta property="og:type" content="profile">
-<meta property="og:url" content="https://rezamansouri.net/">
-<meta property="og:locale" content="en_CA">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#070A16;            /* fiber night */
-  --bg-soft:#0C1124;
-  --panel:#101632;
-  --line:rgba(120,160,255,.14);
-  --ink:#E8EDFF;
-  --ink-dim:#8B96BE;
-  --cyan:#00E5FF;          /* packet */
-  --amber:#FFB347;         /* signal */
-  --magenta:#FF3D81;       /* alert / bgp */
-  --green:#3DFFA8;         /* established */
-  --radius:14px;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  background:var(--bg);
-  color:var(--ink);
-  font-family:'Space Grotesk',sans-serif;
-  line-height:1.65;
-  overflow-x:hidden;
-}
-::selection{background:var(--cyan);color:#03101a}
-a{color:inherit}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reza Mansouri | IT Leader — Infrastructure &amp; Automation</title>
+  <meta name="description" content="Reza Mansouri is an IT Leader in Vancouver building secure, standardized, and scalable technology operations for complex multi-site environments.">
+  <meta name="author" content="Reza Mansouri">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#f4f7f7">
+  <link rel="canonical" href="https://rezamansouri.net/">
+  <meta property="og:title" content="Reza Mansouri | IT Leader">
+  <meta property="og:description" content="Secure, standardized, and scalable IT operations for complex multi-site environments.">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://rezamansouri.net/">
+  <style>
+    :root {
+      --paper: #f4f7f7;
+      --surface: #ffffff;
+      --ink: #102735;
+      --ink-soft: #536773;
+      --navy: #0b2638;
+      --teal: #087d79;
+      --teal-bright: #0d9c95;
+      --blueprint: #b7ced3;
+      --line: #d5e1e3;
+      --line-strong: #b9cdd1;
+      --white: #f9fcfc;
+      --radius: 20px;
+      --shadow: 0 24px 70px rgba(16, 39, 53, .09);
+      --sans: "Aptos", "Segoe UI", Inter, system-ui, -apple-system, sans-serif;
+      --mono: "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+    }
 
-/* ---------- canvas ---------- */
-#net{position:fixed;inset:0;z-index:0;pointer-events:none}
-.vignette{position:fixed;inset:0;z-index:1;pointer-events:none;
-  background:radial-gradient(ellipse at 50% 30%,transparent 40%,rgba(7,10,22,.85) 100%)}
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(rgba(8, 125, 121, .035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(8, 125, 121, .035) 1px, transparent 1px),
+        var(--paper);
+      background-size: 56px 56px;
+      font-family: var(--sans);
+      line-height: 1.65;
+      text-rendering: optimizeLegibility;
+    }
 
-/* ---------- shell ---------- */
-.shell{position:relative;z-index:2;max-width:1180px;margin:0 auto;padding:0 28px}
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      background: radial-gradient(circle at 85% 8%, rgba(13, 156, 149, .09), transparent 28rem);
+    }
 
-/* ---------- nav ---------- */
-nav{position:fixed;top:0;left:0;right:0;z-index:50;
-  backdrop-filter:blur(14px);background:rgba(7,10,22,.55);
-  border-bottom:1px solid var(--line)}
-.nav-inner{max-width:1180px;margin:0 auto;padding:14px 28px;
-  display:flex;align-items:center;justify-content:space-between;gap:16px}
-.logo{font-family:'Unbounded',sans-serif;font-weight:800;font-size:.95rem;letter-spacing:.04em;text-decoration:none}
-.logo span{color:var(--cyan)}
-.hops{display:flex;gap:4px;list-style:none;font-family:'JetBrains Mono',monospace;font-size:.72rem}
-.hops a{display:flex;gap:7px;align-items:center;padding:7px 11px;border-radius:8px;
-  text-decoration:none;color:var(--ink-dim);transition:.2s}
-.hops a:hover,.hops a:focus-visible{color:var(--ink);background:rgba(0,229,255,.08)}
-.hops .h{color:var(--cyan)}
-.hops .ms{color:var(--ink-dim);opacity:.6}
-@media(max-width:840px){.hops .ms{display:none}}
-.ttl{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--ink-dim)}
-.ttl b{color:var(--amber);font-weight:600}
+    a { color: inherit; }
+    img { max-width: 100%; }
+    button, a { -webkit-tap-highlight-color: transparent; }
 
-/* ---------- hero ---------- */
-header{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:130px 0 72px}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(320px,.75fr);
-  gap:64px;align-items:center}
-.hero-copy{min-width:0}
-.session{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;
-  font-family:'JetBrains Mono',monospace;font-size:.74rem;color:var(--green);
-  border:1px solid rgba(61,255,168,.3);background:rgba(61,255,168,.06);
-  padding:7px 14px;border-radius:999px;margin-bottom:24px}
-.session i{width:8px;height:8px;border-radius:50%;background:var(--green);
-  box-shadow:0 0 12px var(--green);animation:pulse 1.6s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
-h1{font-family:'Unbounded',sans-serif;font-weight:800;
-  font-size:clamp(2.7rem,6.4vw,5.2rem);line-height:1.02;letter-spacing:-.02em}
-h1 .ghost{display:block;color:transparent;-webkit-text-stroke:1.5px rgba(0,229,255,.68)}
-.sub{max-width:690px;margin-top:24px;font-size:1.1rem;color:var(--ink-dim)}
-.sub b{color:var(--ink);font-weight:500}
-.cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
-.btn{font-family:'JetBrains Mono',monospace;font-size:.85rem;text-decoration:none;
-  padding:14px 26px;border-radius:10px;transition:.22s;display:inline-flex;align-items:center;gap:9px}
-.btn-cyan{background:var(--cyan);color:#03101a;font-weight:600;
-  box-shadow:0 0 28px rgba(0,229,255,.35)}
-.btn-cyan:hover{transform:translateY(-2px);box-shadow:0 0 44px rgba(0,229,255,.55)}
-.btn-ghost{border:1px solid var(--line);color:var(--ink-dim)}
-.btn-ghost:hover{color:var(--ink);border-color:rgba(0,229,255,.4)}
-.hero-meta{margin-top:34px;font-family:'JetBrains Mono',monospace;font-size:.76rem;
-  color:var(--ink-dim);display:flex;flex-wrap:wrap;gap:8px 22px}
-.hero-meta a{color:var(--cyan);text-decoration:none}
-.hero-meta a:hover{text-decoration:underline}
-.hero-panel{border:1px solid rgba(0,229,255,.22);border-radius:22px;
-  padding:28px;background:linear-gradient(160deg,rgba(16,22,50,.88),rgba(7,10,22,.76));
-  box-shadow:0 28px 80px rgba(0,0,0,.42);backdrop-filter:blur(12px)}
-.panel-kicker{font-family:'JetBrains Mono',monospace;font-size:.69rem;color:var(--amber);
-  text-transform:uppercase;letter-spacing:.14em;margin-bottom:10px}
-.hero-panel h2{font-family:'Unbounded',sans-serif;font-size:1.35rem;line-height:1.25;margin:0 0 22px}
-.impact-list{display:grid;gap:0;border-top:1px solid var(--line)}
-.impact{display:flex;justify-content:space-between;gap:18px;padding:15px 0;
-  border-bottom:1px solid var(--line);align-items:baseline}
-.impact b{font-family:'Unbounded',sans-serif;font-size:1.08rem;color:var(--cyan)}
-.impact span{font-size:.78rem;color:var(--ink-dim);text-align:right}
-.panel-link{display:inline-flex;margin-top:22px;color:var(--green);font-family:'JetBrains Mono',monospace;
-  font-size:.78rem;text-decoration:none}
-.panel-link:hover{text-decoration:underline}
+    .skip-link {
+      position: fixed;
+      left: 18px;
+      top: -80px;
+      z-index: 100;
+      padding: 10px 16px;
+      background: var(--navy);
+      color: white;
+      border-radius: 8px;
+      transition: top .2s ease;
+    }
+    .skip-link:focus { top: 14px; }
 
-/* ---------- counters strip ---------- */
-.counters{margin:48px 0 0;border:1px solid var(--line);border-radius:var(--radius);
-  background:linear-gradient(180deg,rgba(16,22,50,.7),rgba(12,17,36,.7));
-  backdrop-filter:blur(8px);
-  display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden}
-.counter{padding:22px 20px;border-left:1px solid var(--line)}
-.counter:first-child{border-left:none}
-.counter .v{font-family:'Unbounded',sans-serif;font-weight:600;font-size:1.7rem;color:var(--cyan)}
-.counter .l{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--ink-dim);
-  text-transform:uppercase;letter-spacing:.1em;margin-top:6px}
-@media(max-width:760px){.counters{grid-template-columns:repeat(2,1fr)}
-  .counter:nth-child(3){border-left:none}}
+    .wrap { width: min(1160px, calc(100% - 48px)); margin: 0 auto; }
 
-/* ---------- sections ---------- */
-section{padding:100px 0 24px;scroll-margin-top:78px}
-.hopline{display:flex;align-items:center;gap:14px;
-  font-family:'JetBrains Mono',monospace;font-size:.74rem;color:var(--ink-dim);margin-bottom:18px}
-.hopline .n{color:var(--amber)}
-.hopline .rule{flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
-h2{font-family:'Unbounded',sans-serif;font-weight:600;
-  font-size:clamp(1.6rem,4vw,2.5rem);line-height:1.15;margin-bottom:30px}
-h2 em{font-style:normal;color:var(--cyan)}
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
-.reveal.in{opacity:1;transform:none}
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(244, 247, 247, .9);
+      border-bottom: 1px solid rgba(185, 205, 209, .75);
+      backdrop-filter: blur(18px);
+    }
 
-/* ---------- about ---------- */
-.about-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:34px}
-@media(max-width:840px){.about-grid{grid-template-columns:1fr}}
-.about-grid p{color:var(--ink-dim);margin-bottom:18px}
-.about-grid p b{color:var(--ink);font-weight:500}
-.focus{border:1px solid var(--line);border-radius:var(--radius);
-  background:rgba(16,22,50,.55);padding:26px}
-.focus h3{font-family:'JetBrains Mono',monospace;font-size:.74rem;color:var(--amber);
-  text-transform:uppercase;letter-spacing:.12em;margin-bottom:16px}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--ink-dim);
-  border:1px solid var(--line);border-radius:999px;padding:6px 12px;transition:.2s}
-.chip:hover{color:var(--cyan);border-color:rgba(0,229,255,.45)}
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
 
-/* ---------- experience / trace ---------- */
-.trace{position:relative;margin-left:8px;padding-left:36px}
-.trace::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:2px;
-  background:linear-gradient(180deg,var(--cyan),var(--magenta));opacity:.5}
-.tr-item{position:relative;margin-bottom:44px}
-.tr-item::before{content:"";position:absolute;left:-43px;top:6px;width:14px;height:14px;
-  border-radius:50%;background:var(--bg);border:3px solid var(--cyan);box-shadow:0 0 14px rgba(0,229,255,.5)}
-.tr-item .tag{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--magenta);
-  text-transform:uppercase;letter-spacing:.12em}
-.tr-item h3{font-size:1.25rem;font-weight:700;margin:6px 0 2px}
-.tr-item .org{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--ink-dim)}
-.tr-item p{color:var(--ink-dim);margin-top:12px;max-width:760px}
-.tr-item p b{color:var(--ink);font-weight:500}
+    .brand {
+      text-decoration: none;
+      font-size: .94rem;
+      font-weight: 800;
+      letter-spacing: .15em;
+      white-space: nowrap;
+    }
+    .brand span { color: var(--teal); }
 
-/* ---------- projects ---------- */
-.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
-.proj{border:1px solid var(--line);border-radius:18px;overflow:hidden;
-  background:rgba(16,22,50,.56);margin:0;transition:.25s;position:relative;
-  display:flex;flex-direction:column;min-height:100%}
-.proj.featured{grid-column:1/-1}
-.proj.case-study{border-color:rgba(61,255,168,.28);
-  background:linear-gradient(145deg,rgba(61,255,168,.07),rgba(16,22,50,.72))}
-.proj:hover{border-color:rgba(0,229,255,.35);transform:translateY(-3px);
-  box-shadow:0 18px 50px rgba(0,0,0,.45)}
-.proj-head{display:flex;align-items:baseline;gap:14px;padding:24px 28px 0}
-.proj-head .idx{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--amber)}
-.proj-head h3{font-size:1.2rem;font-weight:700}
-.proj-body{padding:14px 28px 24px;color:var(--ink-dim);flex:1}
-.proj-body p b{color:var(--ink);font-weight:500}
-.term{margin:18px 0;background:#060912;border:1px solid var(--line);border-radius:10px;
-  font-family:'JetBrains Mono',monospace;font-size:.78rem;overflow:hidden}
-.term-bar{display:flex;gap:6px;align-items:center;padding:9px 14px;border-bottom:1px solid var(--line);
-  color:var(--ink-dim);font-size:.68rem}
-.term-bar i{width:9px;height:9px;border-radius:50%;display:inline-block}
-.dot-magenta{background:var(--magenta)}.dot-amber{background:var(--amber)}.dot-green{background:var(--green)}
-.term pre{padding:16px 18px;white-space:pre-wrap;line-height:1.8;color:#9FB3E8}
-.term .c{color:var(--cyan)}.term .g{color:var(--green)}.term .a{color:var(--amber)}
-.proj-stats{display:flex;flex-wrap:wrap;gap:26px;padding:0 28px 22px;
-  font-family:'JetBrains Mono',monospace}
-.proj-stats div b{display:block;font-size:1.15rem;color:var(--cyan);font-weight:600}
-.proj-stats div span{font-size:.66rem;color:var(--ink-dim);text-transform:uppercase;letter-spacing:.1em}
-.tags{display:flex;flex-wrap:wrap;gap:8px;padding:0 28px 26px}
-.tags .chip{font-size:.68rem}
-.proj a.live{color:var(--cyan);text-decoration:none}
-.proj a.live:hover{text-decoration:underline}
-.skills-title{margin-top:80px}
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-size: .86rem;
+      font-weight: 650;
+    }
+    .nav-links a { text-decoration: none; color: var(--ink-soft); }
+    .nav-links a:hover { color: var(--teal); }
 
-/* ---------- skills ---------- */
-.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
-.skill{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:rgba(16,22,50,.45)}
-.skill h3{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--cyan);
-  text-transform:uppercase;letter-spacing:.12em;margin-bottom:14px}
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      padding: 0 17px;
+      color: var(--white) !important;
+      background: var(--navy);
+      border-radius: 999px;
+    }
 
-/* ---------- certs ---------- */
-.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
-.cert{border:1px solid var(--line);border-radius:var(--radius);padding:24px;background:rgba(16,22,50,.45)}
-.cert .issuer{font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--amber);
-  text-transform:uppercase;letter-spacing:.12em}
-.cert h3{font-size:1.05rem;margin:8px 0 12px}
-.cert ul{list-style:none;font-size:.86rem;color:var(--ink-dim)}
-.cert li{padding:4px 0;border-bottom:1px dashed rgba(120,160,255,.1)}
-.cert li:last-child{border:none}
-.cert li span{float:right;font-family:'JetBrains Mono',monospace;font-size:.7rem;opacity:.7}
+    .menu-button {
+      display: none;
+      min-width: 44px;
+      min-height: 44px;
+      border: 1px solid var(--line-strong);
+      border-radius: 12px;
+      background: var(--surface);
+      color: var(--ink);
+      font: 700 .8rem var(--mono);
+      cursor: pointer;
+    }
 
-/* ---------- contact / bgp ---------- */
-.peer{border:1px solid rgba(61,255,168,.25);border-radius:var(--radius);
-  background:linear-gradient(180deg,rgba(61,255,168,.05),rgba(16,22,50,.6));
-  padding:40px;display:grid;grid-template-columns:1.2fr 1fr;gap:36px;align-items:center}
-@media(max-width:840px){.peer{grid-template-columns:1fr}}
-.peer p{color:var(--ink-dim)}
-.peer p b{color:var(--ink);font-weight:500}
-.peer .term{margin:0}
-.contact-lead{margin-bottom:16px}.contact-actions{margin-top:26px}
-footer{position:relative;z-index:2;border-top:1px solid var(--line);margin-top:110px;
-  padding:34px 24px;text-align:center;font-family:'JetBrains Mono',monospace;
-  font-size:.74rem;color:var(--ink-dim)}
-footer a{color:var(--cyan);text-decoration:none;margin:0 10px}
-footer a:hover{text-decoration:underline}
-.footer-links{margin-top:10px}
+    .hero { padding: 96px 0 58px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(350px, .8fr);
+      align-items: center;
+      gap: 78px;
+    }
 
-@media(max-width:940px){
-  .hero-grid{grid-template-columns:1fr;gap:36px}
-  .hero-panel{max-width:720px}
-}
-@media(max-width:720px){
-  .shell{padding:0 18px}
-  .nav-inner{padding:10px 18px;flex-wrap:wrap}
-  .logo{font-size:.82rem}.ttl{font-size:.66rem}
-  .hops{order:3;width:100%;display:flex;overflow-x:auto;gap:2px;padding-top:4px;
-    scrollbar-width:none}.hops::-webkit-scrollbar{display:none}
-  .hops .h,.hops .ms{display:none}
-  .hops a{white-space:nowrap;padding:6px 9px;font-size:.69rem}
-  header{padding:142px 0 56px;min-height:auto}
-  .session{font-size:.64rem;margin-bottom:20px}
-  h1{font-size:clamp(2.35rem,13vw,4rem)}
-  .sub{font-size:1rem}.hero-panel{padding:22px}
-  .counters{grid-template-columns:repeat(2,1fr)}
-  .counter{padding:18px 16px}.counter:nth-child(3){border-left:none}
-  .project-grid{grid-template-columns:1fr}.proj.featured{grid-column:auto}
-  section{padding:78px 0 18px}
-  .proj-head,.proj-body,.proj-stats,.tags{padding-left:22px;padding-right:22px}
-}
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+      color: var(--teal);
+      font: 700 .72rem/1.3 var(--mono);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--teal);
+    }
 
-@media (prefers-reduced-motion: reduce){
-  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-  .reveal{opacity:1;transform:none}
-}
-:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:4px}
-</style>
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 780px;
+      margin-bottom: 25px;
+      font-size: clamp(3.15rem, 6.8vw, 6.35rem);
+      line-height: .98;
+      letter-spacing: -.065em;
+      font-weight: 780;
+    }
+    h1 em { color: var(--teal); font-style: normal; }
+
+    .hero-copy > p {
+      max-width: 680px;
+      margin-bottom: 31px;
+      color: var(--ink-soft);
+      font-size: clamp(1.06rem, 2vw, 1.28rem);
+      line-height: 1.65;
+    }
+    .hero-copy p strong { color: var(--ink); }
+
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 23px;
+      border: 1px solid var(--navy);
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: .88rem;
+      font-weight: 750;
+      transition: transform .2s ease, background .2s ease, color .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { color: var(--white); background: var(--navy); }
+    .button-secondary { color: var(--navy); background: transparent; }
+    .button-secondary:hover { color: var(--white); background: var(--navy); }
+
+    .blueprint-card {
+      position: relative;
+      overflow: hidden;
+      padding: 32px;
+      border: 1px solid var(--line-strong);
+      border-radius: 26px;
+      background: rgba(255, 255, 255, .78);
+      box-shadow: var(--shadow);
+    }
+    .blueprint-card::after {
+      content: "";
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      right: -85px;
+      top: -85px;
+      border: 1px solid rgba(8, 125, 121, .22);
+      border-radius: 50%;
+      box-shadow: 0 0 0 28px rgba(8, 125, 121, .04), 0 0 0 56px rgba(8, 125, 121, .025);
+    }
+    .card-label {
+      color: var(--teal);
+      font: 700 .7rem var(--mono);
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .blueprint-card h2 {
+      max-width: 340px;
+      margin: 13px 0 25px;
+      font-size: 1.45rem;
+      line-height: 1.25;
+      letter-spacing: -.02em;
+    }
+    .phase-list { display: grid; gap: 0; border-top: 1px solid var(--line); }
+    .phase {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 12px;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--line);
+      align-items: baseline;
+    }
+    .phase b { color: var(--teal); font: 700 .75rem var(--mono); }
+    .phase span { font-size: .92rem; font-weight: 650; }
+    .card-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding-top: 24px;
+      color: var(--ink-soft);
+      font: 650 .7rem var(--mono);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    .card-foot i { width: 8px; height: 8px; border-radius: 50%; background: var(--teal-bright); box-shadow: 0 0 0 6px rgba(13, 156, 149, .11); }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin: 72px 0 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--line-strong);
+      border-bottom: 1px solid var(--line-strong);
+    }
+    .metric { padding: 28px 24px; border-left: 1px solid var(--line-strong); }
+    .metric:first-child { padding-left: 0; border-left: 0; }
+    .metric strong { display: block; color: var(--teal); font-size: 2rem; line-height: 1; }
+    .metric span { display: block; margin-top: 9px; color: var(--ink-soft); font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+
+    section { padding: 104px 0; scroll-margin-top: 72px; }
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 42px;
+    }
+    .section-kicker { margin-bottom: 12px; color: var(--teal); font: 700 .7rem var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+    .section-head h2, .about-copy h2, .contact h2 {
+      margin-bottom: 0;
+      font-size: clamp(2.25rem, 5vw, 4.1rem);
+      line-height: 1.04;
+      letter-spacing: -.05em;
+    }
+    .section-head p { max-width: 430px; margin-bottom: 4px; color: var(--ink-soft); }
+
+    .case-study {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 58px;
+      padding: 54px;
+      color: var(--white);
+      background: var(--navy);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+    }
+    .case-study::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 44px 44px;
+      pointer-events: none;
+    }
+    .case-study > * { position: relative; }
+    .case-study .section-kicker { color: #6fd3cd; }
+    .case-study h3 { max-width: 590px; margin-bottom: 21px; font-size: clamp(2rem, 4vw, 3.25rem); line-height: 1.05; letter-spacing: -.045em; }
+    .case-study p { max-width: 580px; margin-bottom: 29px; color: #c2d0d7; font-size: 1.03rem; }
+    .text-link { color: #8ce5df; text-decoration: none; font-weight: 750; }
+    .text-link:hover { text-decoration: underline; }
+
+    .case-results { align-self: center; display: grid; grid-template-columns: repeat(2, 1fr); margin: 0; padding: 0; list-style: none; border: 1px solid rgba(255,255,255,.16); border-radius: 20px; overflow: hidden; }
+    .case-result { min-height: 135px; padding: 25px; border-left: 1px solid rgba(255,255,255,.12); border-top: 1px solid rgba(255,255,255,.12); }
+    .case-result:nth-child(odd) { border-left: 0; }
+    .case-result:nth-child(-n+2) { border-top: 0; }
+    .case-result strong { display: block; color: #80e2dc; font-size: 1.65rem; }
+    .case-result span { display: block; margin-top: 7px; color: #aebdc5; font-size: .72rem; line-height: 1.45; letter-spacing: .05em; text-transform: uppercase; }
+
+    .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 24px; }
+    .work-card {
+      min-height: 270px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 31px;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.72);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .work-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+    .work-number { color: var(--teal); font: 700 .7rem var(--mono); letter-spacing: .1em; }
+    .work-card h3 { margin: 36px 0 13px; font-size: 1.55rem; line-height: 1.15; letter-spacing: -.03em; }
+    .work-card p { color: var(--ink-soft); }
+    .work-card a { align-self: flex-start; color: var(--teal); text-decoration: none; font-size: .88rem; font-weight: 750; }
+    .work-card a:hover { text-decoration: underline; }
+
+    .approach { background: rgba(255,255,255,.55); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .principles { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line-strong); }
+    .principle { padding: 30px 25px; border-left: 1px solid var(--line-strong); }
+    .principle:first-child { padding-left: 0; border-left: 0; }
+    .principle b { display: block; margin-bottom: 11px; color: var(--teal); font: 700 .72rem var(--mono); }
+    .principle h3 { margin-bottom: 10px; font-size: 1.13rem; }
+    .principle p { margin-bottom: 0; color: var(--ink-soft); font-size: .9rem; }
+
+    .about-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 80px; align-items: start; }
+    .about-copy > p { margin-top: 28px; color: var(--ink-soft); font-size: 1.05rem; }
+    .about-copy strong { color: var(--ink); }
+    .focus-list { border-top: 1px solid var(--line-strong); }
+    .focus-row { display: grid; grid-template-columns: 145px 1fr; gap: 24px; padding: 21px 0; border-bottom: 1px solid var(--line); }
+    .focus-row b { color: var(--teal); font: 700 .7rem var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    .focus-row span { color: var(--ink-soft); font-size: .92rem; }
+    .credentials { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line-strong); color: var(--ink-soft); font-size: .88rem; }
+    .credentials strong { color: var(--ink); }
+
+    .contact { padding: 66px; color: var(--white); background: var(--navy); border-radius: 30px; }
+    .contact-grid { display: grid; grid-template-columns: 1fr auto; gap: 52px; align-items: end; }
+    .contact p { max-width: 670px; margin: 22px 0 0; color: #bdccd3; font-size: 1.05rem; }
+    .contact .button-primary { color: var(--navy); background: #8ce5df; border-color: #8ce5df; white-space: nowrap; }
+
+    footer { padding: 39px 0 46px; color: var(--ink-soft); font-size: .78rem; }
+    .footer-row { display: flex; justify-content: space-between; gap: 24px; border-top: 1px solid var(--line-strong); padding-top: 28px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 22px; }
+    .footer-links a { text-decoration: none; }
+    .footer-links a:hover { color: var(--teal); }
+
+    :focus-visible { outline: 3px solid rgba(13, 156, 149, .5); outline-offset: 4px; }
+
+    @media (max-width: 920px) {
+      .hero { padding-top: 72px; }
+      .hero-grid, .case-study, .about-grid { grid-template-columns: 1fr; }
+      .hero-grid { gap: 48px; }
+      .blueprint-card { max-width: 650px; }
+      .case-study { gap: 42px; padding: 42px; }
+      .principles { grid-template-columns: repeat(2, 1fr); }
+      .principle:nth-child(3) { padding-left: 0; border-left: 0; border-top: 1px solid var(--line-strong); }
+      .principle:nth-child(4) { border-top: 1px solid var(--line-strong); }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 700px) {
+      .wrap { width: min(100% - 32px, 1160px); }
+      .nav { min-height: 66px; }
+      .menu-button { display: inline-flex; align-items: center; justify-content: center; }
+      .nav-links {
+        position: absolute;
+        top: 66px;
+        left: 0;
+        right: 0;
+        display: none;
+        align-items: stretch;
+        flex-direction: column;
+        gap: 0;
+        padding: 10px 16px 18px;
+        background: rgba(244,247,247,.98);
+        border-bottom: 1px solid var(--line-strong);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { display: block; padding: 12px; }
+      .nav-cta { justify-content: center; border-radius: 12px; }
+      .hero { padding: 54px 0 42px; }
+      h1 { font-size: clamp(3rem, 16vw, 4.6rem); }
+      .hero-grid { gap: 36px; }
+      .blueprint-card { padding: 25px; border-radius: 20px; }
+      .metrics { margin-top: 48px; grid-template-columns: 1fr; }
+      .metric, .metric:first-child { padding: 21px 0; border-left: 0; border-top: 1px solid var(--line); }
+      .metric:first-child { border-top: 0; }
+      section { padding: 76px 0; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 18px; }
+      .case-study { padding: 30px 24px; border-radius: 22px; }
+      .case-results { grid-template-columns: 1fr; }
+      .case-result, .case-result:nth-child(odd), .case-result:nth-child(-n+2) { min-height: auto; border-left: 0; border-top: 1px solid rgba(255,255,255,.12); }
+      .case-result:first-child { border-top: 0; }
+      .work-grid, .principles { grid-template-columns: 1fr; }
+      .work-card { min-height: 245px; }
+      .principle, .principle:first-child, .principle:nth-child(3), .principle:nth-child(4) { padding: 24px 0; border-left: 0; border-top: 1px solid var(--line-strong); }
+      .principle:first-child { border-top: 0; }
+      .about-grid { gap: 48px; }
+      .focus-row { grid-template-columns: 1fr; gap: 7px; }
+      .contact { padding: 36px 25px; border-radius: 22px; }
+      .footer-row { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<canvas id="net" aria-hidden="true"></canvas>
-<div class="vignette" aria-hidden="true"></div>
-
-<nav aria-label="Primary">
-  <div class="nav-inner">
-    <a class="logo" href="#top">REZA<span>.</span>MANSOURI</a>
-    <ul class="hops">
-      <li><a href="#about"><span class="h">01</span> About</a></li>
-      <li><a href="#experience"><span class="h">02</span> Experience</a></li>
-      <li><a href="#projects"><span class="h">03</span> Case studies</a></li>
-      <li><a href="#certs"><span class="h">04</span> Credentials</a></li>
-      <li><a href="#contact"><span class="h">05</span> Contact</a></li>
-    </ul>
-    <div class="ttl">TTL <b id="ttlVal">64</b></div>
-  </div>
-</nav>
-
-<div class="shell" id="top">
-
-  <!-- HERO -->
-  <header>
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <div class="session"><i></i> AVAILABLE FOR THE RIGHT OPPORTUNITY · VANCOUVER, BC</div>
-        <h1>IT OPERATIONS<br>BUILT TO <span class="ghost">SCALE.</span></h1>
-        <p class="sub"><b>IT Leader with 15+ years of experience</b> turning fragmented infrastructure into secure, automated, and documented operations across Windows, macOS, cloud, networking, and multi-site healthcare environments.</p>
-        <div class="cta-row">
-          <a class="btn btn-cyan" href="#projects">View case studies →</a>
-          <a class="btn btn-ghost" href="#contact">Start a conversation</a>
-        </div>
-        <div class="hero-meta">
-          <span>📍 Vancouver, BC · PT</span>
-          <a href="mailto:r.mansouri7@gmail.com">r.mansouri7@gmail.com</a>
-          <a href="https://www.linkedin.com/in/reza-mansouri-67297455/" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="https://github.com/rezamans" target="_blank" rel="noopener">GitHub</a>
-        </div>
-      </div>
-      <aside class="hero-panel reveal" aria-label="Selected operational impact">
-        <div class="panel-kicker">// selected operational impact</div>
-        <h2>From reactive support to repeatable systems.</h2>
-        <div class="impact-list">
-          <div class="impact"><b>20+</b><span>healthcare locations standardized</span></div>
-          <div class="impact"><b>100+</b><span>endpoints under central management</span></div>
-          <div class="impact"><b>≈40%</b><span>cloud licensing cost reduction</span></div>
-          <div class="impact"><b>60%+</b><span>less avoidable field-support travel</span></div>
-        </div>
-        <a class="panel-link" href="https://github.com/rezamans/multi-site-healthcare-it-transformation" target="_blank" rel="noopener">Open the transformation case study ↗</a>
-      </aside>
-    </div>
-
-    <div class="counters reveal">
-      <div class="counter"><div class="v" data-count="15">15+</div><div class="l">Years in enterprise IT</div></div>
-      <div class="counter"><div class="v" data-count="25">25+</div><div class="l">Engineers trained</div></div>
-      <div class="counter"><div class="v">45→1</div><div class="l">Provisioning workflow</div></div>
-      <div class="counter"><div class="v" data-count="3">3+</div><div class="l">Operating platforms</div></div>
-    </div>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Reza Mansouri home">REZA<span>.</span>MANSOURI</a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links">MENU</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a class="nav-cta" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="hopline"><span class="n">hop 1</span><span>about · 10.0.0.1 · 2ms</span><span class="rule"></span></div>
-    <h2 class="reveal">Building enterprise IT<br>that <em>runs itself</em>.</h2>
-    <div class="about-grid reveal">
-      <div>
-        <p>Most IT environments are full of repetitive manual work. I find the patterns, automate them away, and leave teams with reliable systems they can actually scale.</p>
-        <p>I work fluently across <b>Windows, macOS, and Linux</b> with hands-on production experience in enterprise networking and security — <b>Cisco (CCNP/CCNA), MikroTik, Sophos, Fortinet</b> — including deep LAN troubleshooting and routing design.</p>
-        <p>At Terra Nova Medical Clinics I turned 45-minute manual workstation setups into <b>single-command workflows</b> with PowerShell, Jamf Pro, and modern deployment frameworks — and I'm driving a standardization program that turns ad-hoc operations into documented, repeatable processes.</p>
-        <p>Beyond the tech, I've personally <b>trained 25+ engineers</b>. The strongest IT leaders multiply themselves through documentation, knowledge transfer, and consistent standards.</p>
-      </div>
-      <aside class="focus" aria-label="Core technical focus">
-        <h3>// core focus</h3>
-        <div class="chips">
-          <span class="chip">IT Infrastructure</span><span class="chip">Endpoint Management</span>
-          <span class="chip">Network &amp; Firewall</span><span class="chip">BGP &amp; Routing</span>
-          <span class="chip">PowerShell Automation</span><span class="chip">Virtualization</span>
-          <span class="chip">Multi-OS</span><span class="chip">Team Leadership</span>
-          <span class="chip">Standardization</span>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow">IT Leadership · Vancouver, BC</div>
+            <h1>IT operations built to <em>scale.</em></h1>
+            <p><strong>I build secure, standardized, and scalable technology operations</strong> for complex multi-site environments—combining infrastructure, automation, security, and governance.</p>
+            <div class="actions">
+              <a class="button button-primary" href="#work">View the transformation <span aria-hidden="true">→</span></a>
+              <a class="button button-secondary" href="https://www.linkedin.com/in/reza-mansouri-67297455/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+            </div>
+          </div>
+
+          <aside class="blueprint-card" aria-label="IT transformation model">
+            <div class="card-label">12-month operating blueprint</div>
+            <h2>From reactive support to a resilient operating model.</h2>
+            <div class="phase-list">
+              <div class="phase"><b>01</b><span>Stabilize the environment</span></div>
+              <div class="phase"><b>02</b><span>Establish governance</span></div>
+              <div class="phase"><b>03</b><span>Standardize the lifecycle</span></div>
+              <div class="phase"><b>04</b><span>Optimize for resilience</span></div>
+            </div>
+            <div class="card-foot"><span>Standardize before scaling</span><i aria-hidden="true"></i></div>
+          </aside>
         </div>
-      </aside>
-    </div>
-  </section>
 
-  <!-- EXPERIENCE -->
-  <section id="experience">
-    <div class="hopline"><span class="n">hop 2</span><span>experience · 10.0.0.2 · 5ms</span><span class="rule"></span></div>
-    <h2 class="reveal">Traceroute: <em>career path</em></h2>
-    <div class="trace">
-      <div class="tr-item reveal">
-        <span class="tag">● current</span>
-        <h3>IT Leader — Infrastructure &amp; Automation</h3>
-        <div class="org">Terra Nova Medical Clinics — Vancouver, BC</div>
-        <p>Lead IT operations across a multi-clinic healthcare environment. Built a PowerShell automation toolkit that provisions workstations with one command, designed zero-touch macOS deployments via Jamf Pro + ABM, and architected a serverless IT inventory portal. Currently driving an org-wide <b>standardization program</b>.</p>
+        <ul class="metrics" aria-label="Selected experience metrics">
+          <li class="metric"><strong>15+</strong><span>Years in enterprise IT</span></li>
+          <li class="metric"><strong>20+</strong><span>Multi-site locations</span></li>
+          <li class="metric"><strong>100+</strong><span>Managed endpoints</span></li>
+        </ul>
       </div>
-      <div class="tr-item reveal">
-        <span class="tag">ongoing</span>
-        <h3>IT Mentor &amp; Trainer</h3>
-        <div class="org">Knowledge transfer · 25+ engineers trained</div>
-        <p>Trained and mentored 25+ IT engineers — from sysadmin fundamentals to enterprise network design and endpoint automation. Documentation and knowledge transfer treated as core engineering work, not afterthoughts.</p>
-      </div>
-      <div class="tr-item reveal">
-        <span class="tag">15+ years</span>
-        <h3>Enterprise IT &amp; Network Engineering</h3>
-        <div class="org">Multiple organizations · Multi-platform · Multi-vendor</div>
-        <p>Windows Server, macOS, and Linux environments (Fedora, CentOS, Ubuntu); enterprise networking on Cisco, MikroTik, Sophos, and Fortinet; VMware vSphere virtualization; modern endpoint management. Consistent focus: <b>automation, standardization, reliability at scale</b>.</p>
-      </div>
-      <div class="tr-item reveal">
-        <span class="tag">education</span>
-        <h3>Computer Engineering</h3>
-        <div class="org">Amirkabir University of Technology — Tehran Polytechnic</div>
-        <p>One of Iran's top engineering universities, internationally recognized for its computer engineering programs.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="hopline"><span class="n">hop 3</span><span>selected work · 10.0.0.3 · 7ms</span><span class="rule"></span></div>
-    <h2 class="reveal">Systems, standards, and<br><em>measurable outcomes</em>.</h2>
+    <section id="work">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Selected work</div>
+            <h2>Strategy translated<br>into operations.</h2>
+          </div>
+          <p>Focused case studies showing how infrastructure, automation, security, and governance work together.</p>
+        </div>
 
-    <div class="project-grid">
-    <article class="proj featured case-study reveal">
-      <div class="proj-head"><span class="idx">★ LEADERSHIP CASE STUDY</span><h3><a class="live" href="https://github.com/rezamans/multi-site-healthcare-it-transformation" target="_blank" rel="noopener">Multi-Site Healthcare IT Transformation ↗</a></h3></div>
-      <div class="proj-body">
-        <p>A public, privacy-safe case study showing how I moved a fragmented clinic-by-clinic environment toward <b>centralized management, endpoint security, automation, asset governance, documented operations, and measurable cost control</b>. It includes the transformation roadmap, decision model, operating principles, and reusable process templates.</p>
-      </div>
-      <div class="proj-stats">
-        <div><b>20+</b><span>locations in scope</span></div>
-        <div><b>200+</b><span>assets organized</span></div>
-        <div><b>≈40%</b><span>license cost reduction</span></div>
-      </div>
-      <div class="tags"><span class="chip">IT Leadership</span><span class="chip">Healthcare IT</span><span class="chip">Security</span><span class="chip">Governance</span><span class="chip">Automation</span><span class="chip">SOPs</span></div>
-    </article>
+        <article class="case-study">
+          <div>
+            <div class="section-kicker">Leadership case study</div>
+            <h3>Multi-Site Healthcare IT Transformation</h3>
+            <p>A public, privacy-safe case study documenting the shift from fragmented, clinic-by-clinic support to centralized management, measurable controls, documented workflows, and a scalable technology operating model.</p>
+            <a class="text-link" href="https://github.com/rezamans/multi-site-healthcare-it-transformation" target="_blank" rel="noopener">Explore the full case study →</a>
+          </div>
+          <ul class="case-results" aria-label="Selected transformation outcomes">
+            <li class="case-result"><strong>200+</strong><span>Assets organized into structured inventory</span></li>
+            <li class="case-result"><strong>≈40%</strong><span>Monthly cloud licensing cost reduction</span></li>
+            <li class="case-result"><strong>60%+</strong><span>Less avoidable field-support travel</span></li>
+            <li class="case-result"><strong>1 model</strong><span>Repeatable operating standard across locations</span></li>
+          </ul>
+        </article>
 
-    <article class="proj featured reveal">
-      <div class="proj-head"><span class="idx">02 · AUTOMATION</span><h3><a class="live" href="https://github.com/rezamans/terra-nova-it-toolkit" target="_blank" rel="noopener">Terra Nova IT Toolkit — PowerShell Deployment Framework ↗</a></h3></div>
-      <div class="proj-body">
-        <p>A modular automation framework that provisions a complete Windows workstation with <b>one command</b> — app deployment via Chocolatey, RustDesk remote support, printer driver automation, local admin validation, and centralized CSV asset tracking. Modules load dynamically from a central repo, so updates ship without redeploying.</p>
-        <div class="term">
-          <div class="term-bar"><i class="dot-magenta"></i><i class="dot-amber"></i><i class="dot-green"></i>&nbsp; PowerShell — Terra Nova IT Toolkit</div>
-          <pre id="typer"><span class="c">PS C:\&gt;</span> irm https://lnkd.in/gmBBujcu | iex</pre>
+        <div class="work-grid">
+          <article class="work-card">
+            <div>
+              <div class="work-number">01 · AUTOMATION</div>
+              <h3>PowerShell Deployment Framework</h3>
+              <p>A modular toolkit that converts manual workstation provisioning into a consistent, one-command workflow.</p>
+            </div>
+            <a href="https://github.com/rezamans/terra-nova-it-toolkit" target="_blank" rel="noopener">View the toolkit →</a>
+          </article>
+          <article class="work-card">
+            <div>
+              <div class="work-number">02 · ENDPOINT MANAGEMENT</div>
+              <h3>Jamf Deployment Automation</h3>
+              <p>A silent macOS deployment workflow designed for repeatable remote-support installation through Jamf Pro.</p>
+            </div>
+            <a href="https://github.com/rezamans/rustdesk-macos-jamf-installer" target="_blank" rel="noopener">View the project →</a>
+          </article>
         </div>
       </div>
-      <div class="proj-stats">
-        <div><b>45→1</b><span>min / workstation</span></div>
-        <div><b>1</b><span>command deploy</span></div>
-        <div><b>100%</b><span>consistency</span></div>
-      </div>
-      <div class="tags"><span class="chip">PowerShell</span><span class="chip">Windows Automation</span><span class="chip">Chocolatey</span><span class="chip">GitHub-hosted modules</span><span class="chip">RustDesk</span></div>
-    </article>
+    </section>
 
-    <article class="proj reveal">
-      <div class="proj-head"><span class="idx">03</span><h3>Zero-Touch macOS Deployment</h3></div>
-      <div class="proj-body">
-        <p>Zero-touch macOS provisioning with Jamf Pro, Apple Business Manager, and Google Workspace — silent local admin deployment, privacy-aware remote support via Jamf Remote Assist, and PPPC profiles standardized across all clinic locations. <b>No user input required.</b></p>
-      </div>
-      <div class="tags"><span class="chip">Jamf Pro</span><span class="chip">macOS</span><span class="chip">MDM</span><span class="chip">ABM</span><span class="chip">PPPC</span></div>
-    </article>
-
-    <article class="proj reveal">
-      <div class="proj-head"><span class="idx">04</span><h3><a class="live" href="https://techstaff.win" target="_blank" rel="noopener">Smart IT Asset Portal — techstaff.win ↗</a></h3></div>
-      <div class="proj-body">
-        <p>A lean asset management platform built <b>without enterprise licensing costs</b> — Google Sheets as the data layer, Looker Studio for live dashboards, custom portal for decision-ready intelligence. 247 devices, 12 locations, 98% coverage. Now extending with Docker, n8n, and AI-driven IT agents.</p>
-      </div>
-      <div class="proj-stats">
-        <div><b>247</b><span>devices</span></div>
-        <div><b>12</b><span>locations</span></div>
-        <div><b>98%</b><span>coverage</span></div>
-      </div>
-      <div class="tags"><span class="chip">Looker Studio</span><span class="chip">Docker</span><span class="chip">n8n</span><span class="chip">AI Agents</span></div>
-    </article>
-
-    <article class="proj reveal">
-      <div class="proj-head"><span class="idx">05</span><h3>Endpoint Security &amp; Remote Management Rollout</h3></div>
-      <div class="proj-body">
-        <p>Introduced centralized monitoring, remote support, patch visibility, and endpoint detection and response across a distributed clinic environment. The rollout replaced avoidable on-site work with <b>measurable coverage, controlled exceptions, and faster technical response</b>.</p>
-      </div>
-      <div class="tags"><span class="chip">RMM</span><span class="chip">EDR</span><span class="chip">SentinelOne</span><span class="chip">NinjaOne</span><span class="chip">Remote Operations</span></div>
-    </article>
-
-    <article class="proj reveal">
-      <div class="proj-head"><span class="idx">06</span><h3>Browser-Layer Performance Audit — Juno EMR</h3></div>
-      <div class="proj-body">
-        <p>A clinical environment had severe lag and GPU spikes despite modern hardware. Instead of replacing infrastructure, I audited the browser layer and stabilized performance through Chrome Enterprise governance: GPU <b>87% → 14%</b>, lag <b>4.2s → 0.3s</b>, crashes <b>12/day → 0</b>. Zero hardware replaced.</p>
-      </div>
-      <div class="tags"><span class="chip">Chrome Enterprise</span><span class="chip">Healthcare IT</span><span class="chip">Performance</span></div>
-    </article>
-    </div>
-
-    <h2 class="reveal skills-title">Routing table: <em>toolkit</em></h2>
-    <div class="skill-grid">
-      <div class="skill reveal"><h3>// operating systems</h3><div class="chips"><span class="chip">Windows Server &amp; Desktop</span><span class="chip">macOS Administration</span><span class="chip">Linux</span><span class="chip">Fedora</span><span class="chip">CentOS</span><span class="chip">Ubuntu</span></div></div>
-      <div class="skill reveal"><h3>// endpoint &amp; mdm</h3><div class="chips"><span class="chip">Jamf Pro</span><span class="chip">Apple Business Manager</span><span class="chip">Microsoft Intune</span><span class="chip">Zero-Touch Deployment</span><span class="chip">PPPC Profiles</span></div></div>
-      <div class="skill reveal"><h3>// networking &amp; security</h3><div class="chips"><span class="chip">Cisco CCNP / CCNA</span><span class="chip">Cisco ASA</span><span class="chip">BGP</span><span class="chip">MikroTik MTCSE / MTCRE</span><span class="chip">Sophos</span><span class="chip">Fortinet</span><span class="chip">Enterprise Wireless</span></div></div>
-      <div class="skill reveal"><h3>// automation &amp; scripting</h3><div class="chips"><span class="chip">PowerShell</span><span class="chip">Bash</span><span class="chip">Chocolatey</span><span class="chip">n8n</span><span class="chip">Docker</span><span class="chip">GitHub Actions</span></div></div>
-      <div class="skill reveal"><h3>// infrastructure &amp; virtualization</h3><div class="chips"><span class="chip">VMware vSphere</span><span class="chip">Windows Server</span><span class="chip">Infrastructure Monitoring</span><span class="chip">Cloud Platforms</span></div></div>
-      <div class="skill reveal"><h3>// leadership &amp; operations</h3><div class="chips"><span class="chip">Team Leadership</span><span class="chip">IT Training — 25+ engineers</span><span class="chip">Standardization</span><span class="chip">SOPs &amp; Documentation</span><span class="chip">Multi-site Operations</span></div></div>
-    </div>
-  </section>
-
-  <!-- CERTS -->
-  <section id="certs">
-    <div class="hopline"><span class="n">hop 4</span><span>credentials · 10.0.0.4 · 9ms</span><span class="rule"></span></div>
-    <h2 class="reveal">Licenses &amp; <em>certifications</em></h2>
-    <div class="cert-grid">
-      <div class="cert reveal">
-        <div class="issuer">Cisco</div>
-        <h3>CCNP &amp; CCNA — Network Engineering</h3>
-        <ul><li>CCNP — Network Professional <span>Pro</span></li><li>CCNA — Network Associate <span>Assoc</span></li><li>Routing · Switching · Enterprise networks</li></ul>
-      </div>
-      <div class="cert reveal">
-        <div class="issuer">MikroTik</div>
-        <h3>Network &amp; Wireless Engineering Track</h3>
-        <ul><li>MTCSE — Security Engineer <span>2022</span></li><li>MTCEWE — Enterprise Wireless <span>2022</span></li><li>MTCWE — Wireless Engineer <span>2022</span></li><li>MTCRE — Routing Engineer <span>2017</span></li><li>MTCNA — Network Associate <span>2017</span></li></ul>
-      </div>
-      <div class="cert reveal">
-        <div class="issuer">Coursera · Google</div>
-        <h3>Google Cybersecurity Professional Certificate</h3>
-        <ul><li>Foundations of Cybersecurity <span>2024</span></li><li>Manage Security Risks <span>2024</span></li><li>Networks &amp; Network Security <span>2024</span></li><li>Linux and SQL <span>2024</span></li><li>Detection and Response <span>2024</span></li><li>Full Certificate <span>Jun 2024</span></li></ul>
-      </div>
-      <div class="cert reveal">
-        <div class="issuer">Microsoft</div>
-        <h3>Server &amp; Infrastructure Track</h3>
-        <ul><li>MCPS — Certified Professional <span>2011</span></li><li>Windows Server 2008 / 2012 <span>2014</span></li><li>Server Infrastructure <span>2014</span></li><li>Cloud Platform &amp; Infrastructure <span>2016</span></li></ul>
-      </div>
-      <div class="cert reveal">
-        <div class="issuer">VMware</div>
-        <h3>VCP — Virtualization</h3>
-        <ul><li>VMware Certified Professional</li><li>vSphere · ESXi · vCenter</li><li>Production virtualization &amp; host management</li></ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="hopline"><span class="n">hop 5</span><span>destination reached · 10.0.0.5 · 11ms</span><span class="rule"></span></div>
-    <h2 class="reveal">Let's build something<br><em>reliable at scale</em>.</h2>
-    <div class="peer reveal">
-      <div>
-        <p class="contact-lead">Currently open to the right <b>IT Leadership</b>, <b>Infrastructure</b>, <b>Network Engineering</b>, and <b>Automation</b> opportunity — Vancouver, BC preferred; on-site, hybrid, or remote.</p>
-        <p>If you're hiring, or want to talk enterprise IT, healthcare IT, or modern endpoint management — let's set up a session.</p>
-        <div class="cta-row contact-actions">
-          <a class="btn btn-cyan" href="mailto:r.mansouri7@gmail.com">$ send email →</a>
-          <a class="btn btn-ghost" href="https://www.linkedin.com/in/reza-mansouri-67297455/" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="btn btn-ghost" href="https://github.com/rezamans" target="_blank" rel="noopener">GitHub</a>
+    <section class="approach" id="approach">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">Operating approach</div>
+            <h2>Simple principles.<br>Repeatable results.</h2>
+          </div>
+          <p>The technology changes. The operating discipline should remain clear.</p>
+        </div>
+        <div class="principles">
+          <article class="principle"><b>01</b><h3>Secure by default</h3><p>Build safety into the baseline instead of adding it after deployment.</p></article>
+          <article class="principle"><b>02</b><h3>Document before dependency</h3><p>Keep the operation resilient by moving knowledge out of individual heads.</p></article>
+          <article class="principle"><b>03</b><h3>Standardize before scaling</h3><p>Create one reliable model before expanding it across locations.</p></article>
+          <article class="principle"><b>04</b><h3>Measure what matters</h3><p>Use operational risk, service quality, and business impact to set priorities.</p></article>
         </div>
       </div>
-      <div class="term">
-        <div class="term-bar"><i class="dot-magenta"></i><i class="dot-amber"></i><i class="dot-green"></i>&nbsp; router&gt; show bgp neighbor</div>
-        <pre><span class="c">router(config)#</span> router bgp 64512
-<span class="c">router(config-router)#</span> neighbor <span class="a">r.mansouri7@gmail.com</span>
-  remote-as <span class="a">YOUR-COMPANY</span>
-  description <span class="g">"Hiring conversation"</span>
+    </section>
 
-  BGP state = <span class="g">ESTABLISHED ✓</span>
-  Uptime: 15y+ · Holdtime: ∞
-  Location: <span class="a">Vancouver, BC (PT)</span></pre>
+    <section id="about">
+      <div class="wrap about-grid">
+        <div class="about-copy">
+          <div class="section-kicker">About Reza</div>
+          <h2>Leadership with an engineering foundation.</h2>
+          <p>I am an <strong>IT Leader with 15+ years of experience</strong> across enterprise infrastructure, networking, endpoint management, automation, and security. I work at the intersection of technical depth and operational leadership—turning recurring problems into standards, systems, and documented processes that teams can maintain.</p>
+          <p>I have also trained more than <strong>25 engineers</strong>, because the strongest IT environments grow through clear standards, knowledge transfer, and accountable ownership.</p>
+        </div>
+        <div>
+          <div class="focus-list">
+            <div class="focus-row"><b>Leadership</b><span>IT strategy, governance, roadmaps, lifecycle planning, vendor management, SOPs</span></div>
+            <div class="focus-row"><b>Endpoints</b><span>NinjaOne, SentinelOne, Jamf Pro, Apple Business Manager, Windows, macOS</span></div>
+            <div class="focus-row"><b>Infrastructure</b><span>Cisco, MikroTik, VMware, Windows Server, wireless, multi-site networking</span></div>
+            <div class="focus-row"><b>Automation</b><span>PowerShell, Bash, deployment workflows, dashboards, structured reporting</span></div>
+          </div>
+          <div class="credentials"><strong>Credentials:</strong> Cisco CCNP &amp; CCNA · VMware VCP · MikroTik Engineering Track · Google Cybersecurity Professional Certificate</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact">
+          <div class="contact-grid">
+            <div>
+              <div class="section-kicker">Start a conversation</div>
+              <h2>Building something<br>that needs to scale?</h2>
+              <p>Open to the right IT leadership, infrastructure, networking, automation, or healthcare technology opportunity in Vancouver, hybrid, or remote.</p>
+            </div>
+            <a class="button button-primary" href="mailto:r.mansouri7@gmail.com">Email Reza →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <span>© 2026 Reza Mansouri · Vancouver, BC</span>
+      <div class="footer-links">
+        <a href="https://github.com/rezamans" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/reza-mansouri-67297455/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:r.mansouri7@gmail.com">Email</a>
       </div>
     </div>
-  </section>
-</div>
+  </footer>
 
-<footer>
-  © 2026 Reza Mansouri · Vancouver, BC · AS64512
-  <div class="footer-links">
-    <a href="mailto:r.mansouri7@gmail.com">Email</a>
-    <a href="https://www.linkedin.com/in/reza-mansouri-67297455/" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="https://github.com/rezamans" target="_blank" rel="noopener">GitHub</a>
-    <a href="https://techstaff.win" target="_blank" rel="noopener">techstaff.win</a>
-  </div>
-</footer>
+  <script>
+    const menuButton = document.querySelector('.menu-button');
+    const navLinks = document.querySelector('.nav-links');
 
-<script>
-/* ============ LIVING NETWORK CANVAS ============ */
-(function(){
-  const cv = document.getElementById('net');
-  const ctx = cv.getContext('2d');
-  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let W,H,nodes=[],edges=[],packets=[];
-  const mouse={x:-9999,y:-9999};
+    menuButton.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.textContent = open ? 'CLOSE' : 'MENU';
+    });
 
-  function resize(){
-    W = cv.width = innerWidth * devicePixelRatio;
-    H = cv.height = innerHeight * devicePixelRatio;
-    cv.style.width = innerWidth+'px';
-    cv.style.height = innerHeight+'px';
-    build();
-  }
-
-  function build(){
-    nodes=[];edges=[];packets=[];
-    const count = innerWidth < 700 ? 26 : 48;
-    for(let i=0;i<count;i++){
-      nodes.push({
-        x:Math.random()*W, y:Math.random()*H,
-        vx:(Math.random()-.5)*.18*devicePixelRatio,
-        vy:(Math.random()-.5)*.18*devicePixelRatio,
-        r:(Math.random()*1.8+1.2)*devicePixelRatio,
-        hub:Math.random()<.12
+    navLinks.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.textContent = 'MENU';
       });
-    }
+    });
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Reza Mansouri",
+    "jobTitle": "IT Leader — Infrastructure, Automation & Operations",
+    "url": "https://rezamansouri.net/",
+    "email": "mailto:r.mansouri7@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Vancouver",
+      "addressRegion": "BC",
+      "addressCountry": "CA"
+    },
+    "sameAs": [
+      "https://github.com/rezamans",
+      "https://www.linkedin.com/in/reza-mansouri-67297455/"
+    ]
   }
-
-  function spawnPacket(a,b){
-    const colors=['#00E5FF','#FFB347','#FF3D81','#3DFFA8'];
-    packets.push({a,b,t:0,sp:.006+Math.random()*.01,
-      col:colors[Math.floor(Math.random()*colors.length)]});
-  }
-
-  let frame=0;
-  function tick(){
-    ctx.clearRect(0,0,W,H);
-    frame++;
-    const linkDist = 170*devicePixelRatio;
-
-    // move nodes
-    for(const n of nodes){
-      n.x+=n.vx; n.y+=n.vy;
-      if(n.x<0||n.x>W)n.vx*=-1;
-      if(n.y<0||n.y>H)n.vy*=-1;
-      // mouse gravity — cursor acts as a router
-      const dx=mouse.x-n.x, dy=mouse.y-n.y, d=Math.hypot(dx,dy);
-      if(d<260*devicePixelRatio && d>1){
-        n.x+=dx/d*.35*devicePixelRatio;
-        n.y+=dy/d*.35*devicePixelRatio;
-      }
-    }
-
-    // edges
-    edges=[];
-    for(let i=0;i<nodes.length;i++){
-      for(let j=i+1;j<nodes.length;j++){
-        const a=nodes[i],b=nodes[j];
-        const d=Math.hypot(a.x-b.x,a.y-b.y);
-        if(d<linkDist){
-          edges.push([a,b,d]);
-          const alpha=(1-d/linkDist)*.22;
-          ctx.strokeStyle=`rgba(110,160,255,${alpha})`;
-          ctx.lineWidth=devicePixelRatio*.7;
-          ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();
-        }
-      }
-    }
-
-    // spawn packets occasionally
-    if(!reduced && frame%14===0 && edges.length && packets.length<26){
-      const e=edges[Math.floor(Math.random()*edges.length)];
-      spawnPacket(e[0],e[1]);
-    }
-
-    // packets
-    for(let i=packets.length-1;i>=0;i--){
-      const p=packets[i]; p.t+=p.sp;
-      if(p.t>=1){packets.splice(i,1);continue;}
-      const x=p.a.x+(p.b.x-p.a.x)*p.t;
-      const y=p.a.y+(p.b.y-p.a.y)*p.t;
-      ctx.fillStyle=p.col;
-      ctx.shadowColor=p.col; ctx.shadowBlur=10*devicePixelRatio;
-      ctx.beginPath();ctx.arc(x,y,1.8*devicePixelRatio,0,7);ctx.fill();
-      ctx.shadowBlur=0;
-    }
-
-    // nodes
-    for(const n of nodes){
-      ctx.fillStyle=n.hub?'#00E5FF':'rgba(170,195,255,.75)';
-      if(n.hub){ctx.shadowColor='#00E5FF';ctx.shadowBlur=14*devicePixelRatio;}
-      ctx.beginPath();ctx.arc(n.x,n.y,n.hub?n.r*1.7:n.r,0,7);ctx.fill();
-      ctx.shadowBlur=0;
-    }
-
-    if(!reduced) requestAnimationFrame(tick);
-  }
-
-  addEventListener('resize',resize);
-  addEventListener('pointermove',e=>{
-    mouse.x=e.clientX*devicePixelRatio;
-    mouse.y=e.clientY*devicePixelRatio;
-  });
-  addEventListener('pointerleave',()=>{mouse.x=-9999;mouse.y=-9999;});
-  resize();
-  if(reduced){tick();} else {requestAnimationFrame(tick);}
-})();
-
-/* ============ SCROLL REVEAL ============ */
-const io=new IntersectionObserver(es=>{
-  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
-},{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
-/* ============ COUNTERS ============ */
-const cio=new IntersectionObserver(es=>{
-  es.forEach(e=>{
-    if(!e.isIntersecting)return;
-    const el=e.target,target=+el.dataset.count;let v=0;
-    const step=()=>{v+=Math.max(1,Math.ceil(target/40));
-      if(v>=target){el.textContent=target+'+';}
-      else{el.textContent=v;requestAnimationFrame(step);}};
-    step();cio.unobserve(el);
-  });
-},{threshold:.6});
-document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
-
-/* ============ TTL — scroll progress ============ */
-const ttl=document.getElementById('ttlVal');
-addEventListener('scroll',()=>{
-  const p=scrollY/(document.body.scrollHeight-innerHeight);
-  ttl.textContent=Math.max(1,Math.round(64-(p*63)));
-},{passive:true});
-
-/* ============ TERMINAL TYPER ============ */
-(function(){
-  const lines=[
-    '\n<span class="g">→ Loading modules from central repo...</span>',
-    '\n<span class="g">✓</span> Local admin validated',
-    '\n<span class="g">✓</span> Chocolatey applications installed (12)',
-    '\n<span class="g">✓</span> RustDesk configured · ID registered',
-    '\n<span class="g">✓</span> Printer drivers deployed (SRFax)',
-    '\n<span class="g">✓</span> System inventory exported → CSV',
-    '\n<span class="a">⚡ Workstation ready in 2m 41s · was ~45m manual</span>',
-    '\n<span class="c">PS C:\\&gt;</span> <span style="animation:pulse 1s infinite">▊</span>'
-  ];
-  const el=document.getElementById('typer');
-  if(!el)return;
-  const tio=new IntersectionObserver(es=>{
-    if(!es[0].isIntersecting)return;
-    tio.disconnect();
-    let i=0;
-    const next=()=>{ if(i<lines.length){ el.innerHTML+=lines[i++]; setTimeout(next,420);} };
-    setTimeout(next,600);
-  },{threshold:.4});
-  tio.observe(el);
-})();
-</script>
-
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"Person",
-  "name":"Reza Mansouri",
-  "jobTitle":"IT Leader — Infrastructure & Automation",
-  "url":"https://rezamansouri.net",
-  "email":"mailto:r.mansouri7@gmail.com",
-  "address":{"@type":"PostalAddress","addressLocality":"Vancouver","addressRegion":"BC","addressCountry":"CA"},
-  "alumniOf":"Amirkabir University of Technology",
-  "sameAs":["https://www.linkedin.com/in/reza-mansouri-67297455/","https://github.com/rezamans"]
-}
-</script>
+  </script>
 </body>
 </html>
